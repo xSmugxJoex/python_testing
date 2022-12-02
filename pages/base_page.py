@@ -1,11 +1,12 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
 
 
 class BasePage:
     def __init__(self, driver: WebDriver):
         self.driver = driver
-        self.base_url = 'meshok.net'
+        self.base_url = 'http://meshok.net'
 
     def find_element(self, args: tuple):
         by_name, by_val = args

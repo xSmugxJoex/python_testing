@@ -8,7 +8,7 @@ class LoginPage(BasePage):
 
     def open_login_page(self):
         self.driver.get(self.base_url)
-        self.find_element(log.login).click()
+        self.find_element(log.profile_button).click()
         self.find_element(log.button_login).click()
 
     def open_account_page(self):
