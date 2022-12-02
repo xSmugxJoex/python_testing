@@ -1,5 +1,4 @@
 from pages.base_page import BasePage
-from selenium.webdriver.common.keys import Keys
 from locators.locators import UserEdit as user
 from locators.locators import LoginAndAccountLocators as log
 from time import sleep
