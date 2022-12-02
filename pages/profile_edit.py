@@ -4,7 +4,6 @@ from locators.locators import LoginAndAccountLocators as log
 from time import sleep
 
 
-
 class ProfileEdit(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -21,8 +20,8 @@ class ProfileEdit(BasePage):
         self.open_login_page()
         self.find_element(log.email_login).send_keys(login)
         self.find_element(log.password_login).send_keys(password)
-        # sleep(5)
-        # self.find_element(log.button_enter)
+        sleep(2)
+        self.find_element(log.button_enter)
 
     def user_settings(self):
         sleep(2)
@@ -38,4 +37,4 @@ class ProfileEdit(BasePage):
         self.find_element(user.patronymic).send_keys(patronymic)
         sleep(2)
         self.find_element(user.save_edit_button).click()
-        assert 'Fadeev' in user.surname
+
