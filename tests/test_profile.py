@@ -8,4 +8,4 @@ class TestProfileEdit:
         edit_profile.open_account_page()
         edit_profile.user_settings()
         edit_profile.edit_user_profile()
-
+        edit_profile.edit_city()
