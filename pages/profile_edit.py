@@ -16,25 +16,25 @@ class ProfileEdit(BasePage):
 
     def open_login_page(self):
         self.driver.get(self.base_url)
-        sleep(2)
-        self.find_element(log.profile_button).click()
-        sleep(2)
-        self.find_element(log.button_login).click()
+        # sleep(2)
+        self.find_and_click(log.profile_button)
+        # sleep(2)
+        self.find_and_click(log.button_login)
 
     def open_account_page(self):
         login = 'hhazzardd@mail.ru'
         password = 'dfMuy4E09I'
         self.open_login_page()
-        sleep(3)
+        # sleep(3)
         self.find_element(log.email_login).send_keys(login)
         self.find_element(log.password_login).send_keys(password)
-        sleep(2)
-        self.find_element(log.button_enter).click()
+        # sleep(2)
+        self.find_and_click(log.button_enter)
 
     def user_settings(self):
-        sleep(2)
-        self.find_element(user.profile_button_user).click()
-        self.find_element(user.setting_user).click()
+        # sleep(2)
+        self.find_and_click(user.profile_button_user)
+        self.find_and_click(user.setting_user)
 
     def edit_user_profile(self):
         self.find_element(user.surname).clear()
@@ -51,18 +51,19 @@ class ProfileEdit(BasePage):
         self.find_element(user.save_edit_button).click()
 
     def edit_city(self):
-        self.find_element(user.search_city).click()
-        self.find_element(user.city).click()
+        self.find_and_click(user.search_city)
+        self.find_and_click(user.city)
 
     def photo_edit(self):
-        self.find_element(user.button_photo).click()
-        sleep(3)
-        self.find_element(user.photo).send_keys(
+        self.find_and_click(user.button_photo)
+        # sleep(3)
+        self.find_pic(user.photo).send_keys(
             '/home/iiqipii/Desktop/project/python_testing/profile_photo.jpeg'
         )
+        # self.find_and_input('/home/iiqipii/Desktop/project/python_testing/profile_photo.jpeg', user.photo)
         sleep(2)
-        self.find_element(user.photo_enter).click()
-        sleep(2)
+        self.find_and_click(user.photo_enter)
+        # sleep(2)
 
     def verify_email(self):
         verify_email = self.find_element(user.email)

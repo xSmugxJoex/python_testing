@@ -26,6 +26,7 @@ class MeAndBeloved(BasePage):
         self.find_element(log.button_enter).click()
 
     def open_me_and_beloved(self):
+        self.find_element(mab.check_box_man)
         sleep(3)
         self.find_element(mab.meandbeloved).click()
         sleep(3)
@@ -33,8 +34,12 @@ class MeAndBeloved(BasePage):
 
     def edit_filter(self):
         sleep(10)
-        # self.find_element(mab.fixedprice).click()
-        # self.find_element(mab.size).click()
+        self.find_element(mab.fixedprice).click()
+        self.find_element(mab.size).click()
+        # self.scroll_page()
+
+    def edit_filter_2(self):
+        #self.actions_chains(mab.mens)
         self.find_element(mab.mens).click()
         self.find_element(mab.country_russia).click()
         self.find_element(mab.button_show).click()

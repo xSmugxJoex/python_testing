@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from locators.locators import LoginAndAccountLocators as log
-from time import sleep
 
 
 class LoginPage(BasePage):
@@ -9,7 +8,6 @@ class LoginPage(BasePage):
 
     def open_login_page(self):
         self.driver.get(self.base_url)
-        sleep(2)
         self.find_element(log.profile_button).click()
         self.find_element(log.button_login).click()
 

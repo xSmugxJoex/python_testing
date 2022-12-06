@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from locators.locators import CheckLot as lot
-from time import sleep
 
 
 class CheckLot(BasePage):
@@ -11,12 +10,10 @@ class CheckLot(BasePage):
         self.driver.get(self.base_url)
 
     def check_lot_item(self):
-        sleep(3)
-        self.find_element(lot.search_lot).click()
-        self.find_element(lot.search_lot).send_keys('Винтажная бутылка(ДИПЛОМНЫЙ ПРОЕКТ!)')
-        self.find_element(lot.button_search).click()
-        sleep(3)
-        self.find_element(lot.lot_name_button).click()
+        self.find_and_click(lot.search_lot)
+        self.find_element(lot.search_lot).send_keys('Винтажная бутылка(ДИПЛОМНЫЙ ПРОЕКТ!')
+        self.find_and_click(lot.button_search)
+        self.find_and_click(lot.lot_name_button)
 
     def check_lot_name(self):
         checking_lot_name = self.find_element(lot.lot_name)
