@@ -41,7 +41,7 @@ class MeAndBeloved:
     rings = (By.XPATH, '//div[@class="row_13785"]/div[1]/a[7]')
     fixedprice = (By.ID, 'type2')
     size = (By.XPATH, '//div[@data-test="lots-filter/additional"][1]/div/div[4]/div')
-    mens = (By.XPATH, '//div[@data-test="lots-filter/additional"][2]/div/div[1]')
+    mens = (By.XPATH, '//div[@data-test="lots-filter/additional"][2]/div/div[1]/div')
     #check_box_man = (By.XPATH, '//*[@id="app"]/div/div[5]/div[2]/div[1]/div[1]/div/div[1]/div[1]/div/div/div/div/div[1]/div[6]/header/span')
     country_russia = (By.XPATH, '//div[@data-test="lots-filter/additional"][3]/div/div[2]/input')
     button_show = (By.XPATH, '//div[@sticky-side="bottom"]/div/button')
