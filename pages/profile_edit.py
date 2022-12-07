@@ -3,7 +3,7 @@ from locators.locators import UserEdit as user
 from locators.locators import LoginAndAccountLocators as log
 from time import sleep
 
-name = 'Denis'
+name = 'Denis.'
 surname = 'Fadeev'
 patronymic = 'Olegovich'
 phone = 89106459779
@@ -47,8 +47,8 @@ class ProfileEdit(BasePage):
         self.find_element(user.phone).send_keys(phone)
         self.find_element(user.address).clear()
         self.find_element(user.address).send_keys(address)
-        self.find_element(user.sex).click()
-        self.find_element(user.save_edit_button).click()
+        self.find_and_click(user.sex)
+        self.find_and_click(user.save_edit_button)
 
     def edit_city(self):
         self.find_and_click(user.search_city)
