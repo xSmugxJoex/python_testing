@@ -53,16 +53,11 @@ class ProfileEdit(BasePage):
 
     def photo_edit(self):
         self.find_and_click(user.button_photo)
-        # sleep(3)
         self.find_pic(user.photo).send_keys(
             '/home/iiqipii/Desktop/project/python_testing/profile_photo.jpeg'
         )
         sleep(2)
         self.find_and_click(user.photo_enter)
-
-    def verify_photo(self):
-        verify_photo = self.find_element(user.verify_button_remove)
-        return verify_photo
 
     def verify_email(self):
         verify_email = self.find_element(user.email)
