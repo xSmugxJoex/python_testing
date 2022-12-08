@@ -2,11 +2,13 @@ from selenium.webdriver.common.by import By
 
 
 class LoginAndAccountLocators:
-    profile_button = (By.XPATH, '//div[@class="appToolbar_b3450 scroll-lock-padding"]/button[2]')
+    profile_button = (By.XPATH, '//div[@class="appToolbar_b3450 scroll-lock-padding"]/button[2]' or '//div[@class="ma-0"]/div[2]/div/button[2]')
     button_login = (By.XPATH, '//div[@class="buttons_eda00"]/button[2]')
     email_login = (By.XPATH, '//div[@class="inputWithPrefix_98cbc"]/input[1]')
     password_login = (By.XPATH, '//div[@data-test="auth/password"]/div[1]/div[1]/div[1]/input')
     button_enter = (By.XPATH, '//span[text()="Log In"]')
+    verifi_login = (By.XPATH, '//div[@class="container_00e12 profileButton_b3450"]/button/span[text()]')
+
 
 
 class UserEdit:
@@ -26,6 +28,7 @@ class UserEdit:
     photo_enter = (By.XPATH, '//div[@class="wrapper_517a5"]/div[2]/button[2]')
     save_edit_button = (By.XPATH, '//div[@class="standardPadding_8e048"]/div/button')
     email = (By.CSS_SELECTOR, 'div.card_8e048 .standardPadding_8e048 .email_007ce')
+    verify_button_remove = (By.XPATH, '//button[@data-test="profile/basic/avatar-remove-button" and @data-rpl-input="true"]')
 
 class CheckLot:
     search_lot = (By.ID, 'desktop-search-field')
@@ -41,15 +44,29 @@ class MeAndBeloved:
     rings = (By.XPATH, '//div[@class="row_13785"]/div[1]/a[7]')
     fixedprice = (By.ID, 'type2')
     size = (By.XPATH, '//div[@data-test="lots-filter/additional"][1]/div/div[4]/div')
-    mens = (By.XPATH, '//div[@data-test="lots-filter/additional"][2]/div/div[1]/div')
-    #check_box_man = (By.XPATH, '//*[@id="app"]/div/div[5]/div[2]/div[1]/div[1]/div/div[1]/div[1]/div/div/div/div/div[1]/div[6]/header/span')
-    country_russia = (By.XPATH, '//div[@data-test="lots-filter/additional"][3]/div/div[2]/input')
+    input_ring = (By.XPATH, '//div[@class="innerContainer_98cbc"]/div[1]/div[1]/input')
     button_show = (By.XPATH, '//div[@sticky-side="bottom"]/div/button')
     ring_show = (By.XPATH, '//div[@class="wrapper_d828a"]/a[1]')
-    button_add_cart = (By.XPATH, '//div[@class="priceAndButtons_3521f mt-2"]/div/div/button[2]')
-    button_cart_ring = (By.XPATH, '//div[@class="priceAndButtons_3521f mt-2"]/div/div/button[2]')
-    select_ring = (By.XPATH, '//div[@class="item_5dca9"]/div[1]/div/input')
+    ring_verify_text = (By.XPATH, '//div[@class="title_aa41c"]/div[2][text()]')
+    button_add_cart = (By.XPATH, '//button[@title="Add to cart"]')
+    next_cart = (By.XPATH, '//div[@data-test="functional-menu/cart"]')
+    remove_menu = (By.CSS_SELECTOR, 'div.sidePanelContent_701f0 :nth-child(3)')
+    select_ring = (By.XPATH, '//div[@class="box_13ea3"][1]')
     total_price = (By.XPATH, '//div[@class="standardPadding_8e048"]/div[2]/div[text()]')
+    remove_all = (By.XPATH,  '//div[@class="selectAll_6dca5"]/button')
+    verify_remove_all = (By.XPATH, '//span[@class="text_bff57"][text()]')
+
+class Help:
+    menu = (By.ID, 'desktop-functional-menu-button')
+    help_button = (By.XPATH, '//div[@class="container_3afc8 functionalMenu_65c00"]/a[4]/div')
+    registration_and_login = (By.CSS_SELECTOR, 'div.container .section a')
+    logo_reg_adn_log = (By.XPATH, './/main/div/h1[text()]')
+    how_the_actual_works = (By.CSS_SELECTOR, 'li.section .section-inner')
+    logo_htaw = (By.XPATH, '//article/div/h1[text()]')
+    problems = (By.XPATH, '//li[2]/a')
+    logo_probl = (By.XPATH, '//main/article/div/h1[text()]')
+    forgot_pass = (By.XPATH, '//li[3]/a')
+    logo_pass = (By.XPATH, '//main/article/div/h1[text()]')
 
 
 

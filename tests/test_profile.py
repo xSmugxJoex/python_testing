@@ -12,10 +12,10 @@ class TestProfileEdit:
         edit_profile.photo_edit()
 
     def test_verify_email(self, driver):
-        verify_surname = ProfileEdit(driver)
-        verify_surname.open_login_page()
-        verify_surname.open_account_page()
-        verify_surname.user_settings()
-        verify_surname.verify_email()
-        assert 'hhazzardd@mail.ru' in verify_surname.verify_email()
+        verify_email = ProfileEdit(driver)
+        verify_email.open_login_page()
+        verify_email.open_account_page()
+        verify_email.user_settings()
+        verify_email.verify_email()
+        assert 'hhazzardd@mail.ru' in verify_email.verify_email()
 
