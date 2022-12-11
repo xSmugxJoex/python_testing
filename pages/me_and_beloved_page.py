@@ -49,7 +49,7 @@ class MeAndBeloved(BasePage):
         self.find_and_click(mab.select_ring)
 
     def verify_cart(self):
-        color_cart = self.color_verify(mab.empty_cart)
+        color_cart = self.color_verify(mab.empty_cart, 'background-color')
         return color_cart
 
     def remove_all(self):

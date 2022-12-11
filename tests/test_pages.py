@@ -111,17 +111,6 @@ class TestCheckBuyRing:
             remove.verify_remove_all()
         assert 'All items have been removed' in remove.verify_remove_all()
 
-    @allure.story('Check cart')
-    def test_check_color_cart_2(self, driver):
-        check_color_2 = MeAndBeloved(driver)
-        with allure.step('Open Home Page'):
-            check_color_2.open_login_page()
-        with allure.step('Login'):
-            check_color_2.open_account_page()
-        with allure.step(f'Verify remove: {check_color_2.verify_cart()}'):
-            check_color_2.verify_cart()
-        assert check_color_2.verify_cart() != 'rgba(211, 47, 47, 1)', 'Cart is not empty!'
-
 
 @allure.feature('Check my lot')
 class TestCheckLot:

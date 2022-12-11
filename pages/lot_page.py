@@ -12,7 +12,7 @@ class CheckLot(BasePage):
 
     def check_lot_item(self):
         self.find_and_click(lot.search_lot)
-        sleep(2)
+        sleep(3)
         self.find_element(lot.search_lot).send_keys('Винтажная бутылка(ДИПЛОМНЫЙ ПРОЕКТ!)')
         self.find_and_click(lot.button_search)
         self.find_and_click(lot.lot_name_button)

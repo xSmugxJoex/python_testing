@@ -25,8 +25,8 @@ class BasePage:
         by_name, by_val = args
         return self.driver.find_element(by_name, by_val)
 
-    def color_verify(self, locator):
-        return self.find_element(locator).value_of_css_property('background-color')
+    def color_verify(self, locator, arg: str):
+        return self.find_element(locator).value_of_css_property(arg)
 
     def scroll_page(self):
         self.driver.execute_script('windows.scrollTo(0, document.body.scrollHeight);')
