@@ -87,6 +87,17 @@ class TestCheckBuyRing:
             add_cart.verify_price_ring()
         assert '₽14,500.00' in add_cart.verify_price_ring()
 
+    @allure.story('Check cart')
+    def test_check_color_cart_1(self, driver):
+        check_color_1 = MeAndBeloved(driver)
+        with allure.step('Open Home Page'):
+            check_color_1.open_login_page()
+        with allure.step('Login'):
+            check_color_1.open_account_page()
+        with allure.step(f'Verify remove: {check_color_1.verify_cart()}'):
+            check_color_1.verify_cart()
+        assert check_color_1.verify_cart() == 'rgba(211, 47, 47, 1)', 'Cart is empty!'
+
     @allure.story('Remove ring')
     def test_remove_all(self, driver):
         remove = MeAndBeloved(driver)
@@ -100,6 +111,17 @@ class TestCheckBuyRing:
             remove.verify_remove_all()
         assert 'All items have been removed' in remove.verify_remove_all()
 
+    @allure.story('Check cart')
+    def test_check_color_cart_2(self, driver):
+        check_color_2 = MeAndBeloved(driver)
+        with allure.step('Open Home Page'):
+            check_color_2.open_login_page()
+        with allure.step('Login'):
+            check_color_2.open_account_page()
+        with allure.step(f'Verify remove: {check_color_2.verify_cart()}'):
+            check_color_2.verify_cart()
+        assert check_color_2.verify_cart() != 'rgba(211, 47, 47, 1)', 'Cart is not empty!'
+
 
 @allure.feature('Check my lot')
 class TestCheckLot:
@@ -108,7 +130,7 @@ class TestCheckLot:
         check_lot = CheckLot(driver)
         with allure.step('Open site'):
             check_lot.open_site()
-        with allure.step(f'Verify lot name: {check_lot.check_lot_name()}'):
+        with allure.step(f'Verify lot name:'):
             check_lot.check_lot_item()
         assert 'Винтажная бутылка(ДИПЛОМНЫЙ ПРОЕКТ!)' in check_lot.check_lot_name()
 
@@ -193,4 +215,3 @@ class TestHelpPage:
         with allure.step(f'Verify logo: {passwd.check_logo_forgot_pass()}'):
             passwd.check_logo_forgot_pass()
         assert 'Forgot your password?' in passwd.check_logo_forgot_pass()
-

@@ -48,6 +48,10 @@ class MeAndBeloved(BasePage):
         sleep(5)
         self.find_and_click(mab.select_ring)
 
+    def verify_cart(self):
+        color_cart = self.color_verify(mab.empty_cart)
+        return color_cart
+
     def remove_all(self):
         self.find_and_click(Help.menu)
         sleep(3)

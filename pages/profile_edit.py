@@ -46,6 +46,8 @@ class ProfileEdit(BasePage):
         self.find_and_input(address, user.address)
         self.find_and_click(user.sex)
         self.find_and_click(user.save_edit_button)
+        sleep(2)
+        self.find_and_click(user.enter_city)
 
     def edit_city(self):
         self.find_and_click(user.search_city)

@@ -22,6 +22,7 @@ class UserEdit:
     address = (By.XPATH, '//div[@data-test="profile/basic/address"]/div/div/div/input')
     search_city = (By.ID, 'citySearch')
     city = (By.CSS_SELECTOR, '.list_516bf :nth-child(1) .listItem_516bf')
+    enter_city = (By.CSS_SELECTOR, 'div.buttons_0218e .button_a30a1')
     sex = (By.ID, 'select-gender0')
     button_photo = (By.XPATH, '//div[@class="avatarButton_007ce"]/div/button')
     photo = (By.XPATH, '//div[@class="avatarButton_007ce"]/div/input')
@@ -43,7 +44,7 @@ class MeAndBeloved:
     meandbeloved = (By.XPATH, '//div[@class="content_c4076"]/div[1]/div[1]/div/button[3]')
     rings = (By.XPATH, '//div[@class="row_13785"]/div[1]/a[7]')
     fixedprice = (By.ID, 'type2')
-    size = (By.XPATH, '//div[@data-test="lots-filter/additional"][1]/div/div[4]/div')
+    size = (By.PARTIAL_LINK_TEXT, '16,5')
     input_ring = (By.XPATH, '//div[@class="innerContainer_98cbc"]/div[1]/div[1]/input')
     button_show = (By.XPATH, '//div[@sticky-side="bottom"]/div/button')
     ring_show = (By.XPATH, '//div[@class="wrapper_d828a"]/a[1]')
@@ -55,6 +56,8 @@ class MeAndBeloved:
     total_price = (By.XPATH, '//div[@class="standardPadding_8e048"]/div[2]/div[text()]')
     remove_all = (By.XPATH,  '//div[@class="selectAll_6dca5"]/button')
     verify_remove_all = (By.XPATH, '//span[@class="text_bff57"][text()]')
+    empty_cart = (By.XPATH, '//div[@id="desktop-cart-button"]/button/span')
+
 
 class Help:
     menu = (By.ID, 'desktop-functional-menu-button')

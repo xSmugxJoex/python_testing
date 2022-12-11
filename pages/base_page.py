@@ -1,6 +1,5 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -25,6 +24,9 @@ class BasePage:
     def find_pic(self, args: tuple):
         by_name, by_val = args
         return self.driver.find_element(by_name, by_val)
+
+    def color_verify(self, locator):
+        return self.find_element(locator).value_of_css_property('background-color')
 
     def scroll_page(self):
         self.driver.execute_script('windows.scrollTo(0, document.body.scrollHeight);')
