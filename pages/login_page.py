@@ -3,7 +3,7 @@ from locators.locators import LoginAndAccountLocators as log
 from time import sleep
 
 login = 'hhazzardd@mail.ru'
-password = 'dfMuy4E09I'
+password = open('/pass.txt', 'r').readlines()
 
 
 class LoginPage(BasePage):

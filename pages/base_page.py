@@ -13,7 +13,7 @@ class BasePage:
         return WebDriverWait(self.driver, time).until(
             EC.visibility_of_element_located(locator))
 
-    def find_and_input(self, text: str, locator, time=10):
+    def find_and_input(self, text: any, locator, time=10):
         WebDriverWait(self.driver, time).until(
             EC.visibility_of_element_located(locator)).send_keys(text)
 
@@ -41,6 +41,8 @@ class BasePage:
 
     def switch_to_windows(self, arg: int):
         return self.driver.switch_to.window(self.driver.window_handles[arg])
+
+
 
 
 

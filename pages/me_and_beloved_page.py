@@ -18,7 +18,7 @@ class MeAndBeloved(BasePage):
 
     def open_account_page(self):
         login = 'hhazzardd@mail.ru'
-        password = 'dfMuy4E09I'
+        password = open('/pass.txt', 'r').readlines()
         self.open_login_page()
         self.find_and_input(login, log.email_login)
         self.find_and_input(password, log.password_login)

@@ -105,11 +105,11 @@ class TestCheckBuyRing:
             remove.open_login_page()
         with allure.step('Login'):
             remove.open_account_page()
-        with allure.step('Remove all lot'):
-            remove.remove_all()
-        with allure.step(f'Verify remove: {remove.verify_remove_all()}'):
-            remove.verify_remove_all()
-        assert 'All items have been removed' in remove.verify_remove_all()
+       # with allure.step('Remove all lot'):
+          #  remove.remove_all()
+       # with allure.step(f'Verify remove: {remove.verify_remove_all()}'):
+          #  remove.verify_remove_all()
+       # assert 'All items have been removed' in remove.verify_remove_all()
 
 
 @allure.feature('Check my lot')
