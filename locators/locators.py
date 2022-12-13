@@ -30,6 +30,7 @@ class UserEdit:
     save_edit_button = (By.XPATH, '//div[@class="standardPadding_8e048"]/div/button')
     email = (By.CSS_SELECTOR, 'div.card_8e048 .standardPadding_8e048 .email_007ce')
     verify_button_remove = (By.XPATH, '//button[@data-test="profile/basic/avatar-remove-button" and @data-rpl-input="true"]')
+    photo_acc = (By.CSS_SELECTOR, 'div.avatar_007ce')
 
 class CheckLot:
     search_lot = (By.ID, 'desktop-search-field')

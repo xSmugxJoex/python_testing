@@ -2,8 +2,12 @@ from pages.base_page import BasePage
 from locators.locators import LoginAndAccountLocators as log
 from time import sleep
 
-login = 'hhazzardd@mail.ru'
-password = open('/pass.txt', 'r').readlines()
+login = open(
+    '/home/iiqipii/Desktop/project/python_testing/acc.txt', 'r'
+).readlines()
+password = open(
+    '/home/iiqipii/Desktop/project/python_testing/pass.txt', 'r'
+).readlines()
 
 
 class LoginPage(BasePage):

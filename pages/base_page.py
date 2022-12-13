@@ -25,6 +25,9 @@ class BasePage:
         by_name, by_val = args
         return self.driver.find_element(by_name, by_val)
 
+    def url_page(self, locator, arg: str):
+        return self.find_element(locator).get_attribute(arg)
+
     def color_verify(self, locator, arg: str):
         return self.find_element(locator).value_of_css_property(arg)
 

@@ -22,8 +22,12 @@ class ProfileEdit(BasePage):
         self.find_and_click(log.button_login)
 
     def open_account_page(self):
-        login = 'hhazzardd@mail.ru'
-        password = open('/pass.txt', 'r').readlines()
+        login = open(
+            '/home/iiqipii/Desktop/project/python_testing/acc.txt', 'r'
+        ).readlines()
+        password = open(
+            '/home/iiqipii/Desktop/project/python_testing/pass.txt', 'r'
+        ).readlines()
         self.open_login_page()
         self.find_and_input(login, log.email_login)
         self.find_and_input(password, log.password_login)
@@ -50,16 +54,22 @@ class ProfileEdit(BasePage):
         self.find_and_click(user.enter_city)
 
     def edit_city(self):
+        sleep(2)
         self.find_and_click(user.search_city)
         self.find_and_click(user.city)
 
     def photo_edit(self):
+        sleep(2)
         self.find_and_click(user.button_photo)
         self.find_pic(user.photo).send_keys(
             '/home/iiqipii/Desktop/project/python_testing/profile_photo.jpeg'
         )
         sleep(2)
         self.find_and_click(user.photo_enter)
+
+    def verify_photo(self):
+        verify_photo = self.color_verify(user.photo_acc, 'background-image')
+        return verify_photo
 
     def verify_email(self):
         verify_email = self.find_element(user.email)
