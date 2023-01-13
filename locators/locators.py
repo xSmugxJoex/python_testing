@@ -8,6 +8,7 @@ class LoginAndAccountLocators:
     password_login = (By.XPATH, '//div[@data-test="auth/password"]/div[1]/div[1]/div[1]/input')
     button_enter = (By.XPATH, '//span[text()="Log In"]')
     verifi_login = (By.XPATH, '//div[@class="container_00e12 profileButton_b3450"]/button/span[text()]')
+    error_login = (By.XPATH, '//div[@class="inputContainer_98cbc"]/div[2]/label[text()]')
 
 
 

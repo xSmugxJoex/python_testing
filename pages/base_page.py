@@ -9,6 +9,9 @@ class BasePage:
         self.driver = driver
         self.base_url = 'http://meshok.net'
 
+    def find_element_error(self, args: tuple):
+        by_name, by_val = args
+        return self.driver.find_element(by_name, by_val)
     def find_element(self, locator, time=5):
         return WebDriverWait(self.driver, time).until(
             EC.visibility_of_element_located(locator))

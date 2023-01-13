@@ -16,10 +16,10 @@ class HelpPage(BasePage):
 
     def open_account_page(self):
         login = open(
-            '/home/iiqipii/Desktop/project/python_testing/acc.txt', 'r'
+            '/home/qip/Desktop/projects/python_testing/acc.txt', 'r'
         ).readlines()
         password = open(
-            '/home/iiqipii/Desktop/project/python_testing/pass.txt', 'r'
+            '/home/qip/Desktop/projects/python_testing/pass.txt', 'r'
         ).readlines()
         self.open_login_page()
         self.find_and_input(login, log.email_login)
