@@ -2,6 +2,25 @@ from pages.base_page import BasePage
 from locators.locators import LoginAndAccountLocators as log
 from locators.locators import Help
 from time import sleep
+import json
+
+
+class AccountLogin:
+    def __init__(self, filename):
+        self.filename = filename
+        self.data = self.open_file()
+        self.login = self.data['login']
+        self.password = self.data['password']
+
+    def open_file(self):
+        with open(self.filename, 'r') as accountfiles:
+            return json.load(accountfiles)
+
+
+account = AccountLogin('/home/qip/Desktop/projects/python_testing/account.txt')
+
+login = account.login
+password = account.password
 
 
 class HelpPage(BasePage):
@@ -15,12 +34,6 @@ class HelpPage(BasePage):
         self.find_and_click(log.button_login)
 
     def open_account_page(self):
-        login = open(
-            '/home/qip/Desktop/projects/python_testing/acc.txt', 'r'
-        ).readlines()
-        password = open(
-            '/home/qip/Desktop/projects/python_testing/pass.txt', 'r'
-        ).readlines()
         self.open_login_page()
         self.find_and_input(login, log.email_login)
         self.find_and_input(password, log.password_login)
@@ -72,4 +85,3 @@ class HelpPage(BasePage):
     def check_logo_forgot_pass(self):
         check_logo = self.find_element(Help.logo_pass)
         return check_logo.text
-
