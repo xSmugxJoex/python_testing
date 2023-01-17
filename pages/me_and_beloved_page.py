@@ -18,7 +18,7 @@ class AccountLogin:
             return json.load(accountfiles)
 
 
-account = AccountLogin('/home/qip/Desktop/projects/python_testing/account.txt')
+account = AccountLogin('../account.txt')
 
 login = account.login
 password = account.password
